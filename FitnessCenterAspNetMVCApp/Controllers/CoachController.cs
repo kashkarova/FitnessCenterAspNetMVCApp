@@ -11,15 +11,13 @@ namespace FitnessCenterAspNetMVCApp.Controllers
     {
         // GET: Coach
 
-        DB_FitnessCenterWebEntities db = new DB_FitnessCenterWebEntities();
+        private DB_FitnessCenterWebEntities db = new DB_FitnessCenterWebEntities();
 
         public ActionResult Index()
         {
-            IEnumerable<Coach> coaches = db.Coach;
+            var coachList = db.Coach.ToList();
 
-            ViewBag.Coach = coaches;
-
-            return View();
+            return View(coachList);
         }
     }
 }
