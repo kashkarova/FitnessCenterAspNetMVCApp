@@ -1,0 +1,517 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DB_FitnessCenterWebModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Abonement">
+          <Key>
+            <PropertyRef Name="a_id" />
+          </Key>
+          <Property Name="a_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="client_id" Type="int" Nullable="false" />
+          <Property Name="date_begin" Type="datetime" Nullable="false" />
+          <Property Name="service_id" Type="int" Nullable="false" />
+          <Property Name="date_end" Type="datetime" Nullable="false" />
+          <Property Name="a_count" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="c_id" />
+          </Key>
+          <Property Name="c_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="c_surname" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="c_name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="c_phone" Type="varchar" MaxLength="11" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Coach">
+          <Key>
+            <PropertyRef Name="coach_id" />
+          </Key>
+          <Property Name="coach_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="coach_surname" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="coach_name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="coach_post" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="coach_skill" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Contract">
+          <Key>
+            <PropertyRef Name="contr_id" />
+          </Key>
+          <Property Name="contr_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="service_id" Type="int" Nullable="false" />
+          <Property Name="coach_id" Type="int" Nullable="false" />
+          <Property Name="contr_salary" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Feedback">
+          <Key>
+            <PropertyRef Name="f_id" />
+          </Key>
+          <Property Name="f_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="f_name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="f_email" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="f_message" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GroupService">
+          <Key>
+            <PropertyRef Name="service_id" />
+          </Key>
+          <Property Name="service_id" Type="int" Nullable="false" />
+          <Property Name="room_num" Type="int" Nullable="false" />
+          <Property Name="day" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PersonalService">
+          <Key>
+            <PropertyRef Name="service_id" />
+          </Key>
+          <Property Name="service_id" Type="int" Nullable="false" />
+          <Property Name="additional_payment" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="s_id" />
+          </Key>
+          <Property Name="s_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="s_title" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="s_description" Type="varchar" MaxLength="255" />
+          <Property Name="s_price" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="Cli_FK">
+          <End Role="Client" Type="Self.Client" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Abonement" Type="Self.Abonement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="c_id" />
+            </Principal>
+            <Dependent Role="Abonement">
+              <PropertyRef Name="client_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Coach_FK">
+          <End Role="Coach" Type="Self.Coach" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Coach">
+              <PropertyRef Name="coach_id" />
+            </Principal>
+            <Dependent Role="Contract">
+              <PropertyRef Name="coach_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GS_FK">
+          <End Role="Service" Type="Self.Service" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GroupService" Type="Self.GroupService" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="s_id" />
+            </Principal>
+            <Dependent Role="GroupService">
+              <PropertyRef Name="service_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PS_FK">
+          <End Role="Service" Type="Self.Service" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PersonalService" Type="Self.PersonalService" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="s_id" />
+            </Principal>
+            <Dependent Role="PersonalService">
+              <PropertyRef Name="service_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Servi_FK">
+          <End Role="Service" Type="Self.Service" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Abonement" Type="Self.Abonement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="s_id" />
+            </Principal>
+            <Dependent Role="Abonement">
+              <PropertyRef Name="service_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SErvice_FK">
+          <End Role="Service" Type="Self.Service" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="s_id" />
+            </Principal>
+            <Dependent Role="Contract">
+              <PropertyRef Name="service_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DB_FitnessCenterWebModelStoreContainer">
+          <EntitySet Name="Abonement" EntityType="Self.Abonement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Coach" EntityType="Self.Coach" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contract" EntityType="Self.Contract" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Feedback" EntityType="Self.Feedback" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GroupService" EntityType="Self.GroupService" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonalService" EntityType="Self.PersonalService" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="Cli_FK" Association="Self.Cli_FK">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Abonement" EntitySet="Abonement" />
+          </AssociationSet>
+          <AssociationSet Name="Coach_FK" Association="Self.Coach_FK">
+            <End Role="Coach" EntitySet="Coach" />
+            <End Role="Contract" EntitySet="Contract" />
+          </AssociationSet>
+          <AssociationSet Name="GS_FK" Association="Self.GS_FK">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="GroupService" EntitySet="GroupService" />
+          </AssociationSet>
+          <AssociationSet Name="PS_FK" Association="Self.PS_FK">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="PersonalService" EntitySet="PersonalService" />
+          </AssociationSet>
+          <AssociationSet Name="Servi_FK" Association="Self.Servi_FK">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="Abonement" EntitySet="Abonement" />
+          </AssociationSet>
+          <AssociationSet Name="SErvice_FK" Association="Self.SErvice_FK">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="Contract" EntitySet="Contract" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_FitnessCenterWebModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Abonement">
+          <Key>
+            <PropertyRef Name="a_id" />
+          </Key>
+          <Property Name="a_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="client_id" Type="Int32" Nullable="false" />
+          <Property Name="date_begin" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="service_id" Type="Int32" Nullable="false" />
+          <Property Name="date_end" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="a_count" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Client" Relationship="Self.Cli_FK" FromRole="Abonement" ToRole="Client" />
+          <NavigationProperty Name="Service" Relationship="Self.Servi_FK" FromRole="Abonement" ToRole="Service" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="c_id" />
+          </Key>
+          <Property Name="c_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="c_surname" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="c_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="c_phone" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Abonement" Relationship="Self.Cli_FK" FromRole="Client" ToRole="Abonement" />
+        </EntityType>
+        <EntityType Name="Coach">
+          <Key>
+            <PropertyRef Name="coach_id" />
+          </Key>
+          <Property Name="coach_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="coach_surname" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="coach_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="coach_post" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="coach_skill" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Contract" Relationship="Self.Coach_FK" FromRole="Coach" ToRole="Contract" />
+        </EntityType>
+        <EntityType Name="Contract">
+          <Key>
+            <PropertyRef Name="contr_id" />
+          </Key>
+          <Property Name="contr_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="service_id" Type="Int32" Nullable="false" />
+          <Property Name="coach_id" Type="Int32" Nullable="false" />
+          <Property Name="contr_salary" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Coach" Relationship="Self.Coach_FK" FromRole="Contract" ToRole="Coach" />
+          <NavigationProperty Name="Service" Relationship="Self.SErvice_FK" FromRole="Contract" ToRole="Service" />
+        </EntityType>
+        <EntityType Name="Feedback">
+          <Key>
+            <PropertyRef Name="f_id" />
+          </Key>
+          <Property Name="f_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="f_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="f_email" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="f_message" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GroupService">
+          <Key>
+            <PropertyRef Name="service_id" />
+          </Key>
+          <Property Name="service_id" Type="Int32" Nullable="false" />
+          <Property Name="room_num" Type="Int32" Nullable="false" />
+          <Property Name="day" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="time" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Service" Relationship="Self.GS_FK" FromRole="GroupService" ToRole="Service" />
+        </EntityType>
+        <EntityType Name="PersonalService">
+          <Key>
+            <PropertyRef Name="service_id" />
+          </Key>
+          <Property Name="service_id" Type="Int32" Nullable="false" />
+          <Property Name="additional_payment" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Service" Relationship="Self.PS_FK" FromRole="PersonalService" ToRole="Service" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="s_id" />
+          </Key>
+          <Property Name="s_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="s_title" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="s_description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="s_price" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Abonement" Relationship="Self.Servi_FK" FromRole="Service" ToRole="Abonement" />
+          <NavigationProperty Name="Contract" Relationship="Self.SErvice_FK" FromRole="Service" ToRole="Contract" />
+          <NavigationProperty Name="GroupService" Relationship="Self.GS_FK" FromRole="Service" ToRole="GroupService" />
+          <NavigationProperty Name="PersonalService" Relationship="Self.PS_FK" FromRole="Service" ToRole="PersonalService" />
+        </EntityType>
+        <Association Name="Cli_FK">
+          <End Role="Client" Type="Self.Client" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Abonement" Type="Self.Abonement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="c_id" />
+            </Principal>
+            <Dependent Role="Abonement">
+              <PropertyRef Name="client_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Servi_FK">
+          <End Role="Service" Type="Self.Service" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Abonement" Type="Self.Abonement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="s_id" />
+            </Principal>
+            <Dependent Role="Abonement">
+              <PropertyRef Name="service_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Coach_FK">
+          <End Role="Coach" Type="Self.Coach" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Coach">
+              <PropertyRef Name="coach_id" />
+            </Principal>
+            <Dependent Role="Contract">
+              <PropertyRef Name="coach_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SErvice_FK">
+          <End Role="Service" Type="Self.Service" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="s_id" />
+            </Principal>
+            <Dependent Role="Contract">
+              <PropertyRef Name="service_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GS_FK">
+          <End Role="Service" Type="Self.Service" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GroupService" Type="Self.GroupService" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="s_id" />
+            </Principal>
+            <Dependent Role="GroupService">
+              <PropertyRef Name="service_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PS_FK">
+          <End Role="Service" Type="Self.Service" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PersonalService" Type="Self.PersonalService" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="s_id" />
+            </Principal>
+            <Dependent Role="PersonalService">
+              <PropertyRef Name="service_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DB_FitnessCenterWebEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Abonement" EntityType="Self.Abonement" />
+          <EntitySet Name="Client" EntityType="Self.Client" />
+          <EntitySet Name="Coach" EntityType="Self.Coach" />
+          <EntitySet Name="Contract" EntityType="Self.Contract" />
+          <EntitySet Name="Feedback" EntityType="Self.Feedback" />
+          <EntitySet Name="GroupService" EntityType="Self.GroupService" />
+          <EntitySet Name="PersonalService" EntityType="Self.PersonalService" />
+          <EntitySet Name="Service" EntityType="Self.Service" />
+          <AssociationSet Name="Cli_FK" Association="Self.Cli_FK">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Abonement" EntitySet="Abonement" />
+          </AssociationSet>
+          <AssociationSet Name="Servi_FK" Association="Self.Servi_FK">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="Abonement" EntitySet="Abonement" />
+          </AssociationSet>
+          <AssociationSet Name="Coach_FK" Association="Self.Coach_FK">
+            <End Role="Coach" EntitySet="Coach" />
+            <End Role="Contract" EntitySet="Contract" />
+          </AssociationSet>
+          <AssociationSet Name="SErvice_FK" Association="Self.SErvice_FK">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="Contract" EntitySet="Contract" />
+          </AssociationSet>
+          <AssociationSet Name="GS_FK" Association="Self.GS_FK">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="GroupService" EntitySet="GroupService" />
+          </AssociationSet>
+          <AssociationSet Name="PS_FK" Association="Self.PS_FK">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="PersonalService" EntitySet="PersonalService" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_FitnessCenterWebModelStoreContainer" CdmEntityContainer="DB_FitnessCenterWebEntities">
+          <EntitySetMapping Name="Abonement">
+            <EntityTypeMapping TypeName="DB_FitnessCenterWebModel.Abonement">
+              <MappingFragment StoreEntitySet="Abonement">
+                <ScalarProperty Name="a_id" ColumnName="a_id" />
+                <ScalarProperty Name="client_id" ColumnName="client_id" />
+                <ScalarProperty Name="date_begin" ColumnName="date_begin" />
+                <ScalarProperty Name="service_id" ColumnName="service_id" />
+                <ScalarProperty Name="date_end" ColumnName="date_end" />
+                <ScalarProperty Name="a_count" ColumnName="a_count" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Client">
+            <EntityTypeMapping TypeName="DB_FitnessCenterWebModel.Client">
+              <MappingFragment StoreEntitySet="Client">
+                <ScalarProperty Name="c_id" ColumnName="c_id" />
+                <ScalarProperty Name="c_surname" ColumnName="c_surname" />
+                <ScalarProperty Name="c_name" ColumnName="c_name" />
+                <ScalarProperty Name="c_phone" ColumnName="c_phone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Coach">
+            <EntityTypeMapping TypeName="DB_FitnessCenterWebModel.Coach">
+              <MappingFragment StoreEntitySet="Coach">
+                <ScalarProperty Name="coach_id" ColumnName="coach_id" />
+                <ScalarProperty Name="coach_surname" ColumnName="coach_surname" />
+                <ScalarProperty Name="coach_name" ColumnName="coach_name" />
+                <ScalarProperty Name="coach_post" ColumnName="coach_post" />
+                <ScalarProperty Name="coach_skill" ColumnName="coach_skill" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contract">
+            <EntityTypeMapping TypeName="DB_FitnessCenterWebModel.Contract">
+              <MappingFragment StoreEntitySet="Contract">
+                <ScalarProperty Name="contr_id" ColumnName="contr_id" />
+                <ScalarProperty Name="service_id" ColumnName="service_id" />
+                <ScalarProperty Name="coach_id" ColumnName="coach_id" />
+                <ScalarProperty Name="contr_salary" ColumnName="contr_salary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Feedback">
+            <EntityTypeMapping TypeName="DB_FitnessCenterWebModel.Feedback">
+              <MappingFragment StoreEntitySet="Feedback">
+                <ScalarProperty Name="f_id" ColumnName="f_id" />
+                <ScalarProperty Name="f_name" ColumnName="f_name" />
+                <ScalarProperty Name="f_email" ColumnName="f_email" />
+                <ScalarProperty Name="f_message" ColumnName="f_message" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GroupService">
+            <EntityTypeMapping TypeName="DB_FitnessCenterWebModel.GroupService">
+              <MappingFragment StoreEntitySet="GroupService">
+                <ScalarProperty Name="service_id" ColumnName="service_id" />
+                <ScalarProperty Name="room_num" ColumnName="room_num" />
+                <ScalarProperty Name="day" ColumnName="day" />
+                <ScalarProperty Name="time" ColumnName="time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonalService">
+            <EntityTypeMapping TypeName="DB_FitnessCenterWebModel.PersonalService">
+              <MappingFragment StoreEntitySet="PersonalService">
+                <ScalarProperty Name="service_id" ColumnName="service_id" />
+                <ScalarProperty Name="additional_payment" ColumnName="additional_payment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Service">
+            <EntityTypeMapping TypeName="DB_FitnessCenterWebModel.Service">
+              <MappingFragment StoreEntitySet="Service">
+                <ScalarProperty Name="s_id" ColumnName="s_id" />
+                <ScalarProperty Name="s_title" ColumnName="s_title" />
+                <ScalarProperty Name="s_description" ColumnName="s_description" />
+                <ScalarProperty Name="s_price" ColumnName="s_price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
