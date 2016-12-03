@@ -288,12 +288,12 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
-    <Content Include="Views\Coach\Index.cshtml" />
-    <Content Include="Views\Feedback\AddFeedbackView.cshtml" />
+    <Content Include="Views\Service\ServiceView.cshtml" />
+    <Content Include="Views\Coach\CoachView.cshtml" />
+    <Content Include="Views\Feedback\FeedbackView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Service\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
