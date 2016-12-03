@@ -1,0 +1,81 @@
+﻿@font-face {
+    src:url("../fonts/Marck_Script.ttf");
+    font-family:Marck;
+}
+
+body {
+}
+
+a {
+    text-decoration:none;
+}
+
+.logo{
+    clear:left;
+    float:left;
+}
+
+.logo h4{
+    font:italic bold 15px; 
+    font-family:Marck;
+}
+
+.logo h1{
+   font:italic bold 80px;
+   color:white;
+    margin-top:-20px;
+}
+
+.contacts {
+}
+
+h4{
+    color:white;
+    margin-bottom:20px;
+    float:right;
+}
+
+.social {
+    float:right;
+    clear:right;
+}
+
+.social li{
+    list-style:none;
+    display:inline;
+}
+
+#vk, #fb, #tw, #go, #ok, #insta{
+    text-indent:-9999px;
+    width:25px;
+    height:25px;
+    display:inline-block;
+}
+
+    #vk:hover, #fb:hover, #tw:hover, #go:hover, #ok:hover, #insta:hover {
+        box-shadow: 0 0 10px 3px #5B75F0;
+    }
+
+#vk {
+    background:url("../Images/Social/vk.png") no-repeat;
+}
+
+#fb {
+    background:url("../Images/Social/fb.png") no-repeat;
+}
+
+#tw {
+    background:url("../Images/Social/tw.png") no-repeat;
+}
+
+#go {
+    background:url("../Images/Social/go.png") no-repeat;
+}
+
+#ok {
+    background:url("../Images/Social/ok.png") no-repeat;
+}
+
+#insta {
+    background:url("../Images/Social/insta.png") no-repeat;
+}

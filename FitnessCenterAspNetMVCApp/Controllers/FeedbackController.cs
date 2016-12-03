@@ -7,19 +7,14 @@ using System.Web.Mvc;
 
 namespace FitnessCenterAspNetMVCApp.Controllers
 {
-    public class CoachController : Controller
+    public class FeedbackController : Controller
     {
-        // GET: Coach
-
-        private DB_FitnessCenterWebEntities db = new DB_FitnessCenterWebEntities();
-
+        DB_FitnessCenterWebEntities db = new DB_FitnessCenterWebEntities();
+        
+        // GET: Feedback
         public ActionResult Index()
         {
-            var coachList = db.Coach;
-
-            ViewBag.Coach = coachList;
-
-            return View(coachList);
+            return View();
         }
     }
 }
