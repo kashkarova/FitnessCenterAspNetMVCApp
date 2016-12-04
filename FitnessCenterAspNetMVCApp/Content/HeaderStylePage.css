@@ -23,7 +23,7 @@ a {
 .logo h1{
    font:italic bold 80px;
    color:white;
-    margin-top:-20px;
+   margin-top:-20px;
 }
 
 .contacts {
@@ -79,3 +79,5 @@ h4{
 #insta {
     background:url("../Images/Social/insta.png") no-repeat;
 }
+
+

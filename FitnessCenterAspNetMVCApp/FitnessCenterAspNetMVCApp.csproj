@@ -229,6 +229,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Controls\search2_.png" />
     <Content Include="Images\Social\fb.png" />
     <Content Include="Images\Social\go.png" />
     <Content Include="Images\Social\insta.png" />
