@@ -6,7 +6,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{EFDBAD0B-F71A-4121-BBFD-169804F9EECA}</ProjectGuid>
+    <ProjectGuid>{DA55665F-029A-4502-90E8-CDCA950E8821}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FitnessCenterAspNetMVCApp.Tests</RootNamespace>
@@ -93,7 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FitnessCenterAspNetMVCApp\FitnessCenterAspNetMVCApp.csproj">
-      <Project>{AEBF0F9A-5E24-4C2A-AC5E-E3F44E895FB2}</Project>
+      <Project>{041D29AA-8CD1-492C-8AF5-409F591187A1}</Project>
       <Name>FitnessCenterAspNetMVCApp</Name>
     </ProjectReference>
   </ItemGroup>
