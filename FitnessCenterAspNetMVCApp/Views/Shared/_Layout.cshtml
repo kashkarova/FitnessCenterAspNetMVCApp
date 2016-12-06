@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/HeadesStyleSheet.css" rel="stylesheet" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -11,22 +12,20 @@
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
+                <h1 id="title"><a href="#">Фитнес-центр</a></h1>
+                
+                <div class="contacts"> 
+                    <h3>ул. Сумская, 18/20, +38(098)-111-22-33</h3>                
+                    <ul class="social">
+                        <li><a href="https://vk.com/" target="_blank" id="vk">Vkontakte</a></li>
+                        <li><a href="https://www.facebook.com/" target="_blank" id="fb">Facebook</a></li>
+                        <li><a href="https://twitter.com/" target="_blank" id="tw">Twitter</a></li>
+                        <li><a href="https://www.google.com.ua/" target="_blank" id="go">Google</a></li>
+                        <li><a href="https://www.instagram.com" target="_blank" id="insta">Instagram</a></li>
+                        <li><a href="https://ok.ru/" target="_blank" id="ok">Odnoklassniki</a></li>
+                    </ul>
+                </div>
+
         </div>
         
     </div>
