@@ -1,9 +1,9 @@
+E:\НТУ ХПИ\4 курс\Технология разработки ПО Web ориентированных систем\Лабы\Лаба1\FitnessCenterAspNetMVCApp\FitnessCenterAspNetMVCApp.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 E:\НТУ ХПИ\4 курс\Технология разработки ПО Web ориентированных систем\Лабы\Лаба1\FitnessCenterAspNetMVCApp\FitnessCenterAspNetMVCApp.Tests\bin\Debug\ApplicationInsights.config
 E:\НТУ ХПИ\4 курс\Технология разработки ПО Web ориентированных систем\Лабы\Лаба1\FitnessCenterAspNetMVCApp\FitnessCenterAspNetMVCApp.Tests\bin\Debug\roslyn\csc.exe
 E:\НТУ ХПИ\4 курс\Технология разработки ПО Web ориентированных систем\Лабы\Лаба1\FitnessCenterAspNetMVCApp\FitnessCenterAspNetMVCApp.Tests\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 E:\НТУ ХПИ\4 курс\Технология разработки ПО Web ориентированных систем\Лабы\Лаба1\FitnessCenterAspNetMVCApp\FitnessCenterAspNetMVCApp.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 E:\НТУ ХПИ\4 курс\Технология разработки ПО Web ориентированных систем\Лабы\Лаба1\FitnessCenterAspNetMVCApp\FitnessCenterAspNetMVCApp.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.dll
-E:\НТУ ХПИ\4 курс\Технология разработки ПО Web ориентированных систем\Лабы\Лаба1\FitnessCenterAspNetMVCApp\FitnessCenterAspNetMVCApp.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 E:\НТУ ХПИ\4 курс\Технология разработки ПО Web ориентированных систем\Лабы\Лаба1\FitnessCenterAspNetMVCApp\FitnessCenterAspNetMVCApp.Tests\bin\Debug\roslyn\Microsoft.CSharp.Core.targets
 E:\НТУ ХПИ\4 курс\Технология разработки ПО Web ориентированных систем\Лабы\Лаба1\FitnessCenterAspNetMVCApp\FitnessCenterAspNetMVCApp.Tests\bin\Debug\roslyn\Microsoft.VisualBasic.Core.targets
 E:\НТУ ХПИ\4 курс\Технология разработки ПО Web ориентированных систем\Лабы\Лаба1\FitnessCenterAspNetMVCApp\FitnessCenterAspNetMVCApp.Tests\bin\Debug\roslyn\System.Collections.Immutable.dll

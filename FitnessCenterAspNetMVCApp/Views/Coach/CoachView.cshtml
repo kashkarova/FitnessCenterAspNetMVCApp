@@ -1,0 +1,28 @@
+﻿@{
+    int i = 1;
+}
+
+@Styles.Render("~/Content/MainStyleSheet.css")
+
+<div class="coaches">
+    <h4>Тренеры</h4>
+    <ul>
+        @foreach (Coach c in ViewBag.coachList)
+        {
+            <li>
+                <img src="@Url.Content(string.Format("~/Images/Content/Coaches/{0}.png", i))" />
+                <h4>
+                    @Html.DisplayFor(modelItem => c.coach_name)
+                    @Html.DisplayFor(modelItem => c.coach_surname)
+                </h4>
+                <h5>
+                    @Html.DisplayFor(modelItem=>c.coach_post)
+                </h5>
+                <h6>
+                    @Html.DisplayFor(modelItem=>c.coach_skill)
+                </h6>
+            </li>
+            i++;
+        }
+    </ul>
+</div>

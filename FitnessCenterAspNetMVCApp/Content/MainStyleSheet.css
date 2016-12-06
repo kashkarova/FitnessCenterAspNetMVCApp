@@ -1,8 +1,13 @@
-﻿.about_us {
+﻿li {
+    list-style:none;
+}
+
+.about_us {
     background:black;
 }
 
-.about_us li{
-    display:inline-block;
-    list-style:none;
+.about_us li, .coaches li{
+    display:inline-block;   
 }
+
+

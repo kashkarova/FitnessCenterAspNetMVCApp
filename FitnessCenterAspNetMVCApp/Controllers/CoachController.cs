@@ -12,8 +12,9 @@ namespace FitnessCenterAspNetMVCApp.Controllers
         DbModel db = new DbModel();
         
         // GET: Coach
-        public ActionResult Index()
+        public ActionResult CoachView()
         {
+            ViewBag.coachList = db.Coach.ToList();
 
             return View();
         }

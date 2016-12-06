@@ -235,9 +235,9 @@
     <Content Include="Images\Content\Articles\images %283%29.jpg" />
     <Content Include="Images\Content\Articles\nabrat-miwsu-min.jpg" />
     <Content Include="Images\Content\Articles\спортпит.jpg" />
-    <Content Include="Images\Content\Coaches\mens.png" />
-    <Content Include="Images\Content\Coaches\mw.png" />
-    <Content Include="Images\Content\Coaches\personal-trainer.png" />
+    <Content Include="Images\Content\Coaches\1.png" />
+    <Content Include="Images\Content\Coaches\2.png" />
+    <Content Include="Images\Content\Coaches\3.png" />
     <Content Include="Images\Content\Services\1.jpg" />
     <Content Include="Images\Content\Services\2.jpg" />
     <Content Include="Images\Content\Services\3.jpg" />
@@ -309,6 +309,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
     <Content Include="Views\Service\ServiceView.cshtml" />
+    <Content Include="Views\Coach\CoachView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
