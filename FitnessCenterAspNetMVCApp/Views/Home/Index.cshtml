@@ -2,25 +2,21 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+@Styles.Render("~/Content/MainStyleSheet.css")
 
 <div class="about_us">
     <ul>
         <li>
-            <div></div>
+            <div><img src="~/Images/Content/lady.jpg" /></div>
         </li>
         <li>
-            <div></div>
+            <div><img src="~/Images/Content/about_us.jpg" /></div>
         </li>
         <li>
-            <div></div>
+            <div><img src="~/Images/Content/man.jpg" /></div>
         </li>
     </ul>
 </div>
 
 
-@Html.Partial("Trainee") <!--It needs for show parts of html code from another view. It also helps to divide information between views.-->
+ <!--It needs for show parts of html code from another view. It also helps to divide information between views.-->

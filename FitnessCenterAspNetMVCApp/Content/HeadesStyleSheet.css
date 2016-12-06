@@ -87,7 +87,7 @@ a {
 }
 
 .search {
-    background-image: -webkit-linear-gradient(top, #222222, #EEEEEE);
+    background-image: -webkit-linear-gradient(top, #222222, #EEEEEE, #000000);
 	border-radius:5px 5px 5px 5px;
     height:50px;
     margin-top:55px;

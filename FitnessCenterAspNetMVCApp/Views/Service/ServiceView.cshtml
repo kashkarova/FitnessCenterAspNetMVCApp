@@ -1,0 +1,26 @@
+﻿
+<div class="row">
+
+    @{
+        int i = 1;
+    }
+
+    @foreach (Service serv in ViewBag.serviceList)
+    {
+        <div class="col-md-4">
+            <img src="@Url.Content(string.Format("~/Images/Content/Services/{0}.jpg", i))" />
+            <h4>
+                @Html.DisplayFor(modelItem => serv.s_title)
+            </h4>
+            <p>
+                @Html.DisplayFor(modelItem => serv.s_price) грн
+            </p>
+            <p><a class="btn btn-default" href="#">Learn more &raquo;</a></p>
+        </div>
+
+        i++;
+    }
+</div>
+
+
+

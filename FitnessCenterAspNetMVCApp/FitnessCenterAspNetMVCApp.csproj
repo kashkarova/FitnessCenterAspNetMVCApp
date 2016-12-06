@@ -194,6 +194,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\CoachController.cs" />
+    <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Models\Abonement.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -222,10 +223,12 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\HeadesStyleSheet.css" />
+    <Content Include="Content\MainStyleSheet.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Content\about_us.jpg" />
     <Content Include="Images\Content\Articles\article.jpg" />
     <Content Include="Images\Content\Articles\images %281%29.jpg" />
     <Content Include="Images\Content\Articles\images %282%29.jpg" />
@@ -235,17 +238,17 @@
     <Content Include="Images\Content\Coaches\mens.png" />
     <Content Include="Images\Content\Coaches\mw.png" />
     <Content Include="Images\Content\Coaches\personal-trainer.png" />
-    <Content Include="Images\Content\Services\aerobic.jpg" />
-    <Content Include="Images\Content\Services\boxing.jpg" />
-    <Content Include="Images\Content\Services\crossfit.jpg" />
-    <Content Include="Images\Content\Services\gym.jpg" />
-    <Content Include="Images\Content\Services\pilates.jpg" />
-    <Content Include="Images\Content\Services\shaping.jpg" />
-    <Content Include="Images\Content\Services\swimming.jpg" />
-    <Content Include="Images\Content\Services\tennis.jpg" />
-    <Content Include="Images\Content\Services\wrestling.jpg" />
-    <Content Include="Images\Content\thumb2-sport-futnes-gantelu-chernyu-fon.jpg" />
-    <Content Include="Images\Content\tmb_173175_7238_cut.jpg" />
+    <Content Include="Images\Content\Services\1.jpg" />
+    <Content Include="Images\Content\Services\2.jpg" />
+    <Content Include="Images\Content\Services\3.jpg" />
+    <Content Include="Images\Content\Services\4.jpg" />
+    <Content Include="Images\Content\Services\5.jpg" />
+    <Content Include="Images\Content\Services\6.jpg" />
+    <Content Include="Images\Content\Services\7.jpg" />
+    <Content Include="Images\Content\Services\8.jpg" />
+    <Content Include="Images\Content\Services\9.jpg" />
+    <Content Include="Images\Content\lady.jpg" />
+    <Content Include="Images\Content\man.jpg" />
     <Content Include="Images\Controls\search2_.png" />
     <Content Include="Images\Social\fb.png" />
     <Content Include="Images\Social\go.png" />
@@ -305,7 +308,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
-    <Content Include="Views\Home\Trainee.cshtml" />
+    <Content Include="Views\Service\ServiceView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

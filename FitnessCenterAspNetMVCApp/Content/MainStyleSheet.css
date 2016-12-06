@@ -1,0 +1,8 @@
+﻿.about_us {
+    background:black;
+}
+
+.about_us li{
+    display:inline-block;
+    list-style:none;
+}
