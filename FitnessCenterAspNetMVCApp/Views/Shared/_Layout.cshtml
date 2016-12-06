@@ -28,8 +28,15 @@
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
+        
     </div>
     <div class="container body-content">
+        <div class="search">
+            <form action="#">
+                <input type="search" placeholder="Search..." />
+                <button>Search</button>
+            </form>
+        </div>
         @RenderBody()
         <hr />
         <footer>
