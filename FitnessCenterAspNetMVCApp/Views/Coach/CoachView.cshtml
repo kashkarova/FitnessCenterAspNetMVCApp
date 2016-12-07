@@ -4,9 +4,11 @@
 
 @Styles.Render("~/Content/MainStyleSheet.css")
 
+
+
 <div class="coaches">
     <h4>Тренеры</h4>
-    <ul>
+    <ul class="coachlist">
         @foreach (Coach c in ViewBag.coachList)
         {
             <li>
@@ -18,9 +20,9 @@
                 <h5>
                     @Html.DisplayFor(modelItem=>c.coach_post)
                 </h5>
-                <h6>
+                <h5>
                     @Html.DisplayFor(modelItem=>c.coach_skill)
-                </h6>
+                </h5>
             </li>
             i++;
         }
