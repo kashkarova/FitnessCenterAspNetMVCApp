@@ -20,7 +20,7 @@ li {
     padding-top:5px;
 }
 
-    .coaches h4:first-child, .services h4, .feedback h4 {
+    .coaches h4:first-child, .services h4, .feedback h4, .feedbackform h4 {
         font-size:25px;
         margin-left:500px;
         color:#eeeeee;
@@ -51,13 +51,13 @@ li {
         font-size:15px;
     }
 
-.more_btn{
+.more_btn, .feedback_btn, .more_btn_hide{
     background-image: -webkit-linear-gradient(top, #222222, #000000, #EEEEEE);
 	border-radius:5px 5px 5px 5px;
     color:#eeeeee;
 }
 
-    .more_btn:hover {
+    .more_btn:hover, .feedback_btn:hover, .more_btn_hide:hover {
         box-shadow: 0 0 10px 3px #5B75F0;
         color:#5B75F0;
     }
@@ -68,3 +68,23 @@ li {
     margin-left:1px;
 }
 
+.feedback li{
+    display:inline-block;
+}
+
+.feedback_btn {
+    margin-top:5px;
+}
+
+.feedback_msg{
+    width:250px;
+    height:150px;
+}
+
+.feedbackform{
+    background:black;
+}
+
+.additional {
+    display:block;
+}

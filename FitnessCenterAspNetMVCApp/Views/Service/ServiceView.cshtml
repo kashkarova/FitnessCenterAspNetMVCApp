@@ -1,5 +1,5 @@
 ﻿@Styles.Render("~/Content/MainStyleSheet.css")
-
+@Scripts.Render("~/Scripts/ShowHideInfoScript.js")
 
 <div class="row services">
 
@@ -20,6 +20,11 @@
                 @Html.DisplayFor(modelItem => serv.s_price) грн
             </h5>
             <p><a class="btn btn-default more_btn" href="#">Подробнее</a></p>
+            <div style="display:none" class="temp">
+                Additional info about service.
+
+                <p><a class="btn btn-default more_btn_hide" href="#">Скрыть</a></p>
+            </div>
         </div>
 
         i++;

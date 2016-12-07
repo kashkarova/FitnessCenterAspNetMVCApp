@@ -1,11 +1,12 @@
 ﻿@model FitnessCenterAspNetMVCApp.Feedback
+@Styles.Render("~/Content/MainStyleSheet.css")
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("SaveFeedback", "Feedback")) 
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        <h4>Feedback</h4>
+    <div class="form-horizontal feedbackform">
+        <h4>Оставить отзыв</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -42,5 +43,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    <a href="http://localhost:31785/Feedback/ShowFeedback">К списку отзывов</a>
 </div>

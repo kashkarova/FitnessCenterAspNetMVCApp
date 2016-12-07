@@ -11,6 +11,24 @@ a {
     color:#EEEEEE;
     font-family:Marck;
     font-size:35px;
+    text-decoration:none;
+}
+
+.menu_li li:not(:first-child){
+    color:#EEEEEE;
+    font-family:Marck;
+    font-size:25px;
+    margin-top:22px;
+    margin-left:5px;
+}
+
+.menu_li li a{
+
+}
+
+.main_menu li{
+    display:inline;
+    list-style:none;
 }
 
 .contacts, .social{
@@ -105,4 +123,10 @@ a {
     height:30px;
     text-indent:-9999px;
     background:url("../Images/Controls/search2_.png") no-repeat;
+}
+
+
+
+.menu_li li a:hover {
+    text-shadow: 0 0 10px 3px #5B75F0;
 }
