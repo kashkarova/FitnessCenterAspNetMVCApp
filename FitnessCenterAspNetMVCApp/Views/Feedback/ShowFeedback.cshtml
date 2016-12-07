@@ -1,0 +1,20 @@
+﻿@Styles.Render("~/Content/MainStyleSheet.css")
+
+
+<div class="row feedback">
+
+    <h4>Отзывы</h4>
+
+    @foreach(Feedback fb in ViewBag.listFeedback)
+    {
+        <div class="col-md-4 feedback_msg">      
+            <h4>
+                @Html.DisplayFor(modelItem => fb.f_name)
+            </h4>
+            <h5>
+                @Html.DisplayFor(modelItem => fb.f_message)
+            </h5>
+        </div>
+
+    }
+</div>

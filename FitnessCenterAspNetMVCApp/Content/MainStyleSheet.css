@@ -20,21 +20,21 @@ li {
     padding-top:5px;
 }
 
-    .coaches h4:first-child, .services h4 {
+    .coaches h4:first-child, .services h4, .feedback h4 {
         font-size:25px;
         margin-left:500px;
         color:#eeeeee;
         font-family:Marck;
     }
 
-.coachlist h4{
+.coachlist h4, .feedback_msg h4{
     color:#eeeeee;
     font-size:20px;
     font-family:Marck;
     margin-left:30px;
 }
 
-.coachlist h5 {
+.coachlist h5, .feedback_msg h5 {
     color:#eeeeee;
     font-size:15px;
     font-family:Marck;
@@ -61,4 +61,10 @@ li {
         box-shadow: 0 0 10px 3px #5B75F0;
         color:#5B75F0;
     }
+
+.feedback {
+    background:black;
+    width:1140px;
+    margin-left:1px;
+}
 
