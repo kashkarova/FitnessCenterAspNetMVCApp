@@ -204,7 +204,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Models\AddNewAbonement.cs" />
+    <Compile Include="Models\AddNewAbonementModel.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Coach.cs" />
     <Compile Include="Models\Contract.cs" />
@@ -319,10 +319,11 @@
     <Content Include="Views\Feedback\AddFeedback.cshtml" />
     <Content Include="Views\Feedback\ShowFeedback.cshtml" />
     <Content Include="Views\Timetable\TimetableView.cshtml" />
+    <Content Include="Views\AddNewAbonement\AddNewAbonementView.cshtml" />
+    <Content Include="Views\ArticlesView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\AddNewAbonement\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

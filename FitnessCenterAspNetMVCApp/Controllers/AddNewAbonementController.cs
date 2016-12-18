@@ -20,23 +20,37 @@ namespace FitnessCenterAspNetMVCApp.Controllers
             services = db.Service.Select(s => new SelectListItem()
             {
                 Text = s.s_title,
-                Value = s.s_id.ToString()
+                Value=s.s_id.ToString()
             });
 
 
             ViewBag.services = services;
-            return View(new AddNewAbonement());
+            return View(new AddNewAbonementModel());
         }
 
-        public ActionResult SaveNewAbonement(AddNewAbonement abNew)
+        public ActionResult SaveNewAbonement(AddNewAbonementModel abNew)
         {
             Client cli = new Client(abNew.c_name, abNew.c_surname, abNew.c_phone);
 
             db.Client.Add(cli);
 
-            int s_id = int.Parse(db.Service.Where(s => s.s_title == abNew.s_title).ToString());
+            int id = 0;
 
-            Abonement ab = new Abonement(cli.c_id, abNew.date_begin, s_id, abNew.date_end, abNew.a_count);
+            int temp_title = 0;
+
+            temp_title = int.Parse(abNew.s_title);
+
+            var servs = db.Service
+                        .Where(s=>s.s_id== temp_title)
+                        .Select(s => s);
+
+            foreach (Service se in servs)
+                id = se.s_id;
+
+
+            Abonement ab = new Abonement(cli.c_id, abNew.date_begin, id, abNew.date_end, abNew.a_count);
+
+            db.Abonement.Add(ab);
 
             db.SaveChanges();
 

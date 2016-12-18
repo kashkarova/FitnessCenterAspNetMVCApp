@@ -93,5 +93,7 @@ namespace FitnessCenterAspNetMVCApp
                 .Property(e => e.coach)
                 .IsUnicode(false);
         }
+
+        public System.Data.Entity.DbSet<FitnessCenterAspNetMVCApp.Models.AddNewAbonementModel> AddNewAbonements { get; set; }
     }
 }
