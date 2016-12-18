@@ -1,5 +1,5 @@
-﻿$(document).ready(function () {
-    $('.more_btn').click(function () {
-            $(this).hide
+﻿$(window).load(function () {
+    $(".add_drop_info_btn p").click(function () {
+        $(".temp").toggleClass("active");
     });
 });

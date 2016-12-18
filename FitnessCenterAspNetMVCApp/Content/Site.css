@@ -7,6 +7,7 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background:#c2c2c2;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -126,6 +127,15 @@ li {
 	display:inline-block;
 }
 
-#vk:hover, #fb:hover, #tw:hover, #go:hover, #ok:hover, #insta:hover{
+#vk:hover, #fb:hover, #tw:hover, #go:hover, #ok:hover, #insta:hover
+{
 	box-shadow: 0 0 10px 3px #5B75F0;
+}
+
+#page_title
+{
+    margin-left:490px;
+    padding-top:10px;
+    font:normal 40px arial;
+    color:black;
 }

@@ -1,21 +1,9 @@
 ﻿@model IEnumerable<FitnessCenterAspNetMVCApp.TimetableView>
 
-@{
-    int time = 0;
-    Random rnd = new Random();
 
-    int min = 0;
-    min = rnd.Next(0, 30);
+<h3 id="page_title">Расписание</h3>
 
-    int room = 0;
-
-    room = rnd.Next(1, 10);
-
-}
-
-<h4>Расписание</h4>
-
-<table class="table">
+<table class="table table-bordered">
     <tr>
         <th>Услуга</th>
         <th>Тренер</th>

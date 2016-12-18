@@ -1,8 +1,14 @@
 ﻿@Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/bundles/bootstrap")
 
-@Scripts.Render("~/Scripts/ShowHideInfoScript.js")
-
+<script>
+    $(document).ready(function () {
+        $(".btn_hide").click(function ()
+        {
+            $(".info_hide").slideToggle("slow");
+        })
+    })
+</script>
 
 <div class="row services">
 
@@ -10,23 +16,20 @@
         int i = 1;
     }
 
-    <h4>Услуги</h4>
+    <h3 id="page_title">Услуги</h3>
 
     @foreach (Service serv in ViewBag.serviceList)
     {
         <div class="col-md-4 serviceblock">
             <img src="@Url.Content(string.Format("~/Images/Content/Services/{0}.jpg", i))" />
-            <h5>
+            <h4>
                 @Html.DisplayFor(modelItem => serv.s_title)
-            </h5>
-            <h5>
-                @Html.DisplayFor(modelItem => serv.s_price) грн
-            </h5>
-            <p><a class="btn btn-default more_btn" href="#">Подробнее</a></p>
-            <div class="temp">
-                Additional info about service.
-
-                <p><a class="btn btn-default more_btn_hide" href="#">Скрыть</a></p>
+            </h4>
+            
+            <div class="info_hide">              
+                <h5>Стоимость 1 занятия:
+                    @Html.DisplayFor(modelItem => serv.s_price) грн
+                </h5>
             </div>
         </div>
 

@@ -232,12 +232,9 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\Content\about_us.jpg" />
-    <Content Include="Images\Content\Articles\article.jpg" />
     <Content Include="Images\Content\Articles\images %281%29.jpg" />
     <Content Include="Images\Content\Articles\images %282%29.jpg" />
     <Content Include="Images\Content\Articles\images %283%29.jpg" />
-    <Content Include="Images\Content\Articles\nabrat-miwsu-min.jpg" />
-    <Content Include="Images\Content\Articles\спортпит.jpg" />
     <Content Include="Images\Content\Coaches\1.png" />
     <Content Include="Images\Content\Coaches\2.png" />
     <Content Include="Images\Content\Coaches\3.png" />
@@ -320,7 +317,6 @@
     <Content Include="Views\Feedback\ShowFeedback.cshtml" />
     <Content Include="Views\Timetable\TimetableView.cshtml" />
     <Content Include="Views\AddNewAbonement\AddNewAbonementView.cshtml" />
-    <Content Include="Views\ArticlesView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

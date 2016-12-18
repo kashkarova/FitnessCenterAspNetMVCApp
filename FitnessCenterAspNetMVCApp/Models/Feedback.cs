@@ -23,7 +23,7 @@ namespace FitnessCenterAspNetMVCApp
         public string f_email { get; set; }
 
         [Required]
-        [StringLength(255)]
+        [StringLength(255, ErrorMessage = "Длина строки должна быть до 255 символов")]
         [Display(Name = "Отзыв")]
         public string f_message { get; set; }
     }
