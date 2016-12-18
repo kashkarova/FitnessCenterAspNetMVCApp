@@ -15,6 +15,13 @@ namespace FitnessCenterAspNetMVCApp
             Abonement = new HashSet<Abonement>();
         }
 
+        public Client(string name, string surname, string phone)
+        {
+            c_name = name;
+            c_surname = surname;
+            c_phone = phone;
+        }
+
         [Key]
         public int c_id { get; set; }
 

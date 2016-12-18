@@ -25,5 +25,16 @@ namespace FitnessCenterAspNetMVCApp
         public virtual Client Client { get; set; }
 
         public virtual Service Service { get; set; }
+
+        public Abonement() { }
+
+        public Abonement(int client, DateTime date_b, int service, DateTime date_e, int count)
+        {
+            client_id = client;
+            date_begin=date_b;
+            service_id = service;
+            date_end = date_e;
+            a_count = count;
+        }
     }
 }

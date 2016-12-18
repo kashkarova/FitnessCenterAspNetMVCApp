@@ -1,16 +1,17 @@
-﻿@Styles.Render("~/Content/MainStyleSheet.css")
-
-
-<div class="feedback">
+﻿
+<div class="">
 
     <h4>Отзывы</h4>
 
-    <ul>
+<table>
+    <tr>
 
+    </tr>
         @foreach (Feedback fb in ViewBag.listFeedback)
         {
-            <li>
-                <div class="col-md-4 feedback_msg">
+            <tr>
+                <td>
+                <div>
                     <h4>
                         @Html.DisplayFor(modelItem => fb.f_name)
                     </h4>
@@ -18,12 +19,11 @@
                         @Html.DisplayFor(modelItem => fb.f_message)
                     </h5>
                 </div>
-            </li>
-
+            </td>
+            </tr>
         }
-    </ul>
 
-    
+</table>    
 </div>
 
 <div>

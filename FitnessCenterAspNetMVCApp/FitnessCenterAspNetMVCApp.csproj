@@ -193,15 +193,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AddNewAbonementController.cs" />
     <Compile Include="Controllers\CoachController.cs" />
     <Compile Include="Controllers\FeedbackController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
+    <Compile Include="Controllers\TimetableController.cs" />
     <Compile Include="Models\Abonement.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Models\AddNewAbonement.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Coach.cs" />
     <Compile Include="Models\Contract.cs" />
@@ -219,12 +222,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\Service.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Models\TimetableView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\HeadesStyleSheet.css" />
-    <Content Include="Content\MainStyleSheet.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -239,6 +241,7 @@
     <Content Include="Images\Content\Coaches\1.png" />
     <Content Include="Images\Content\Coaches\2.png" />
     <Content Include="Images\Content\Coaches\3.png" />
+    <Content Include="Images\Content\fight.jpg" />
     <Content Include="Images\Content\Services\1.jpg" />
     <Content Include="Images\Content\Services\2.jpg" />
     <Content Include="Images\Content\Services\3.jpg" />
@@ -250,6 +253,7 @@
     <Content Include="Images\Content\Services\9.jpg" />
     <Content Include="Images\Content\lady.jpg" />
     <Content Include="Images\Content\man.jpg" />
+    <Content Include="Images\Content\tennisistka.jpg" />
     <Content Include="Images\Controls\search2_.png" />
     <Content Include="Images\Social\fb.png" />
     <Content Include="Images\Social\go.png" />
@@ -314,9 +318,11 @@
     <Content Include="Views\Coach\CoachView.cshtml" />
     <Content Include="Views\Feedback\AddFeedback.cshtml" />
     <Content Include="Views\Feedback\ShowFeedback.cshtml" />
+    <Content Include="Views\Timetable\TimetableView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\AddNewAbonement\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

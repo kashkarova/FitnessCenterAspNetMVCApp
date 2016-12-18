@@ -1,5 +1,7 @@
 ﻿@model FitnessCenterAspNetMVCApp.Feedback
-@Styles.Render("~/Content/MainStyleSheet.css")
+
+
+<div class="">
 
 @using (Html.BeginForm("SaveFeedback", "Feedback")) 
 {
@@ -42,6 +44,8 @@
     </div>
 }
 
-<div>
-    <a href="http://localhost:31785/Feedback/ShowFeedback">К списку отзывов</a>
+    <div>
+        <a href="http://localhost:31785/Feedback/ShowFeedback">К списку отзывов</a>
+    </div>
+
 </div>

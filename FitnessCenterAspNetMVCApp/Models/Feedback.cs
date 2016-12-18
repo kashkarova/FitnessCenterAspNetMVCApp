@@ -14,14 +14,17 @@ namespace FitnessCenterAspNetMVCApp
 
         [Required]
         [StringLength(30)]
+        [Display(Name ="Èìÿ")]
         public string f_name { get; set; }
 
         [Required]
         [StringLength(20)]
+        [Display(Name = "E-mail")]
         public string f_email { get; set; }
 
         [Required]
         [StringLength(255)]
+        [Display(Name = "Îòçûâ")]
         public string f_message { get; set; }
     }
 }

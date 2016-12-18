@@ -1,4 +1,10 @@
-﻿body {
+﻿@font-face {
+    font-family: 'Marck';
+    src: url('../fonts/Marck_Script.ttf') format('truetype');
+}
+
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -21,4 +27,105 @@ input,
 select,
 textarea {
  
+}
+
+li {
+    display:inline-block;
+}
+
+.contacts {
+
+    color:white;
+}
+
+.info {
+    height:444px;
+    width:1440px;
+    background:black;
+}
+
+#contacts_title
+{
+    margin-left:490px;
+    padding-top:10px;
+    font:normal 30px Marck;
+    color:white;
+    text-shadow:0 1px 15px #5B75F0;
+}
+
+.contacts_first
+{
+    margin-left:350px;
+}
+
+    .contacts_first p
+    {
+        padding-top:20px;
+        font:normal 25px sans-serif;
+        color:white;
+    }
+
+    .contacts_second p
+    {
+        padding-top:50px;
+        font:normal 25px Marck;
+        color:white;
+    }
+
+.contacts_second 
+{
+    margin-left:430px;
+}
+
+
+#vk{
+	text-indent:-9999px;
+	background:url("../Images/Social/vk.png") no-repeat;
+	width:25px;
+	height:25px;
+	display:inline-block;
+}
+
+#fb{
+	text-indent:-9999px;
+	background:url("../Images/Social/fb.png") no-repeat;
+	width:25px;
+	height:25px;
+	display:inline-block;
+}
+
+#tw{
+	text-indent:-9999px;
+	background:url(../Images/Social/tw.png) no-repeat;
+	width:25px;
+	height:25px;
+	display:inline-block;
+}
+
+#go{
+	text-indent:-9999px;
+	background:url("../Images/Social/go.png") no-repeat;
+	width:25px;
+	height:25px;
+	display:inline-block;
+}
+
+#ok{
+	text-indent:-9999px;
+	background:url("../Images/Social/ok.png") no-repeat;
+	width:25px;
+	height:25px;
+	display:inline-block;
+}
+
+#insta{
+	text-indent:-9999px;
+	background:url("../Images/Social/insta.png") no-repeat;
+	width:25px;
+	height:25px;
+	display:inline-block;
+}
+
+#vk:hover, #fb:hover, #tw:hover, #go:hover, #ok:hover, #insta:hover{
+	box-shadow: 0 0 10px 3px #5B75F0;
 }

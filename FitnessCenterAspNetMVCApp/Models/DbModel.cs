@@ -18,6 +18,7 @@ namespace FitnessCenterAspNetMVCApp
         public virtual DbSet<Contract> Contract { get; set; }
         public virtual DbSet<Feedback> Feedback { get; set; }
         public virtual DbSet<Service> Service { get; set; }
+        public virtual DbSet<TimetableView> TimetableView { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -83,6 +84,14 @@ namespace FitnessCenterAspNetMVCApp
                 .HasMany(e => e.Contract)
                 .WithRequired(e => e.Service)
                 .HasForeignKey(e => e.service_id);
+
+            modelBuilder.Entity<TimetableView>()
+                .Property(e => e.s_title)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<TimetableView>()
+                .Property(e => e.coach)
+                .IsUnicode(false);
         }
     }
 }

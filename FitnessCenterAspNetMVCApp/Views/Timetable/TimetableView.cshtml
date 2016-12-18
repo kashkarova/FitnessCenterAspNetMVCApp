@@ -1,0 +1,52 @@
+﻿@model IEnumerable<FitnessCenterAspNetMVCApp.TimetableView>
+
+@{
+    int time = 0;
+    Random rnd = new Random();
+
+    int min = 0;
+    min = rnd.Next(0, 30);
+
+    int room = 0;
+
+    room = rnd.Next(1, 10);
+
+}
+
+<h4>Расписание</h4>
+
+<table class="table">
+    <tr>
+        <th>Услуга</th>
+        <th>Тренер</th>
+        <th>Время</th>
+        <th>Место</th>
+    </tr>
+
+@foreach (TimetableView item in ViewBag.result)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.s_title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.coach)
+        </td>
+        <td>
+                @{
+
+                    string.Format("{0}:{1}", time, min);
+
+                }            
+        </td>
+        <td>
+            @{
+
+                string.Format("комн. {0}", room);
+
+            }
+            
+        </td>
+    </tr>
+}
+</table>
