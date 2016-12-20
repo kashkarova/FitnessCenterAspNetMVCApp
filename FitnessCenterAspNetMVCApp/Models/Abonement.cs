@@ -14,10 +14,12 @@ namespace FitnessCenterAspNetMVCApp
 
         public int client_id { get; set; }
 
+        [DataType(DataType.Date)]
         public DateTime date_begin { get; set; }
 
         public int service_id { get; set; }
 
+        [DataType(DataType.Date)]
         public DateTime date_end { get; set; }
 
         public int a_count { get; set; }

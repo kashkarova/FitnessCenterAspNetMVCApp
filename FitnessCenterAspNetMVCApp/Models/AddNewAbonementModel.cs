@@ -32,10 +32,12 @@ namespace FitnessCenterAspNetMVCApp.Models
         public int a_count { get; set; }
 
         [Required]
+        [DataType(DataType.Date)]
         [Display(Name = "Дата начала действия абонемента")]
         public DateTime date_begin { get; set; }
 
         [Required]
+        [DataType(DataType.Date)]
         [Display(Name = "Дата окончания действия абонемента")]
         public DateTime date_end { get; set; }
 
