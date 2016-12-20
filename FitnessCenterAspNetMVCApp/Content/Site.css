@@ -3,11 +3,9 @@
     src: url('../fonts/Marck_Script.ttf') format('truetype');
 }
 
-
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background:#c2c2c2;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -35,7 +33,7 @@ li {
 }
 
 .contacts {
-
+    padding-top:50px;
     color:white;
 }
 
@@ -127,7 +125,7 @@ li {
 	display:inline-block;
 }
 
-#vk:hover, #fb:hover, #tw:hover, #go:hover, #ok:hover, #insta:hover
+#vk:hover, #fb:hover, #tw:hover, #go:hover, #ok:hover, #insta:hover, .btn_show:hover
 {
 	box-shadow: 0 0 10px 3px #5B75F0;
 }
@@ -139,3 +137,25 @@ li {
     font:normal 40px arial;
     color:black;
 }
+
+.btn_show
+{
+    margin-bottom:10px;
+}
+
+.addInfo
+{
+    width:240px;
+    height:140px;
+    border-radius:10px 10px 10px 10px;
+    margin-bottom:20px;
+    border:solid 1px #808080;
+    background:rgba(170, 166, 166, 0.34);
+    padding-top:10px;
+    padding-left:10px;
+    margin-top:10px;
+    font:normal 25px sans-serif;
+}
+
+
+

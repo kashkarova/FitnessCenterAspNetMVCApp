@@ -1,5 +1,9 @@
 ﻿@model FitnessCenterAspNetMVCApp.Models.AddNewAbonementModel
 
+@Styles.Render("~/Content/Site.css")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/Scripts/ShowHideInfoScript.js")
 
 @using (Html.BeginForm("SaveNewAbonement", "AddNewAbonement"))
 {

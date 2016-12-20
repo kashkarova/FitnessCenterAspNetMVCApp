@@ -1,14 +1,9 @@
-﻿@Scripts.Render("~/bundles/jquery")
+﻿@Styles.Render("~/Content/Site.css")
+@Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/Scripts/ShowHideInfoScript.js")
 
-<script>
-    $(document).ready(function () {
-        $(".btn_hide").click(function ()
-        {
-            $(".info_hide").slideToggle("slow");
-        })
-    })
-</script>
+
 
 <div class="row services">
 
@@ -26,10 +21,15 @@
                 @Html.DisplayFor(modelItem => serv.s_title)
             </h4>
             
-            <div class="info_hide">              
-                <h5>Стоимость 1 занятия:
-                    @Html.DisplayFor(modelItem => serv.s_price) грн
-                </h5>
+            <div > 
+                <a class="btn_show btn btn-default">Информация</a>   
+                <div class="addInfo">
+                    <h5 class="info_hide">
+                        Стоимость 1 занятия:
+                        @Html.DisplayFor(modelItem => serv.s_price) грн
+                    </h5>
+                </div>                          
+                
             </div>
         </div>
 

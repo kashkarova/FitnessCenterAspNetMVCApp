@@ -14,7 +14,7 @@ namespace FitnessCenterAspNetMVCApp
 
         [Required]
         [StringLength(30)]
-        [Display(Name ="Имя")]
+        [Display(Name ="Name")]
         public string f_name { get; set; }
 
         [Required]
@@ -24,7 +24,7 @@ namespace FitnessCenterAspNetMVCApp
 
         [Required]
         [StringLength(255, ErrorMessage = "Длина строки должна быть до 255 символов")]
-        [Display(Name = "Отзыв")]
+        [Display(Name = "Your feedback")]
         public string f_message { get; set; }
     }
 }

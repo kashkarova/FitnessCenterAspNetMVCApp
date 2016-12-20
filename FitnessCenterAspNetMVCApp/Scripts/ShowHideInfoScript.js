@@ -1,5 +1,16 @@
-﻿$(window).load(function () {
-    $(".add_drop_info_btn p").click(function () {
-        $(".temp").toggleClass("active");
+﻿$(document).ready(function () {
+    $(".row a").click(function ()
+    {
+        $("p").toggle();
     });
+
+    $(".btn_show").click(function () {
+
+        $(this).next().slideToggle("slow");
+    })
+
 });
+
+
+
+
